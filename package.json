@@ -1,0 +1,12 @@
+{
+  "name": "ue9_pokeapo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc index.ts",
+    "init": "tsc --init"
+  },
+  "author": "",
+  "license": "ISC"
+}
