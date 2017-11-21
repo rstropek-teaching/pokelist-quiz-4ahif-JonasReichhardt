@@ -1,5 +1,8 @@
 const pokemonList = document.getElementById('pokemons');
 const detailName = document.getElementById('name');
+const pic = document.getElementById('pic');
+const weight = document.getElementById('weight');
+const moves = document.getElementById('moves');
 
 let firstPage : string = 'https://pokeapi.co/api/v2/pokemon/';
 let nextLink : string;
@@ -19,7 +22,7 @@ function getPoke(){
                 nextLink = pokelist.next;
                 previousLink = pokelist.previous;
                 for (const pokemon of pokelist.results) {
-                  html += `<tr><td>${pokemon.name.toUpperCase()}</td><td><button onclick="details('${pokemon.url}')">Details</button></td></tr>`
+                  html += `<tr><td>${pokemon.name.toUpperCase()}</td><td><button onclick=details('${pokemon.url}')>Details</button></td></tr>`
                 }
                 pokemonList.innerHTML = html;
               });
@@ -35,9 +38,17 @@ function details(link2:string){
           fetch(link2).then(response => {
             response.json().then(pokelist2 => {
               let html = '';
-              html += pokelist2.forms.name;
-              window.alert(html);
-              detailName.innerHTML = html;
+              detailName.innerHTML = pokelist2.forms[0].name.toUpperCase();
+              if(pic!=null&&weight!=null){
+                pic.innerHTML = `<img src='${pokelist2.sprites.front_default}'>`;
+                weight.innerText = "Weight: "+pokelist2.weight +" lbs";
+                for(const move of pokelist2.moves){
+                  html += `<li>${move.move.name.toUpperCase()}</li>`;
+                }
+                if(moves!=null){
+                  moves.innerHTML = html;
+                }
+              }
             });
           });
         })();
