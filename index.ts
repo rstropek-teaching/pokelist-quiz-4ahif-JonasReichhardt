@@ -19,7 +19,7 @@ function getPoke(){
                 nextLink = pokelist.next;
                 previousLink = pokelist.previous;
                 for (const pokemon of pokelist.results) {
-                  html += `<tr><td>${pokemon.name.toUpperCase()}</td><td><button onclick="details(${pokemon.url})">Details</button></td></tr>`
+                  html += `<tr><td>${pokemon.name.toUpperCase()}</td><td><button onclick="details('${pokemon.url}')">Details</button></td></tr>`
                 }
                 pokemonList.innerHTML = html;
               });

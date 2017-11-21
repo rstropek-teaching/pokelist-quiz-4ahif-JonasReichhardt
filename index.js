@@ -16,7 +16,7 @@ function getPoke() {
                     previousLink = pokelist.previous;
                     for (var _i = 0, _a = pokelist.results; _i < _a.length; _i++) {
                         var pokemon = _a[_i];
-                        html += "<tr><td>" + pokemon.name.toUpperCase() + "</td><td><button onclick=\"details(" + pokemon.url + ")\">Details</button></td></tr>";
+                        html += "<tr><td>" + pokemon.name.toUpperCase() + "</td><td><button onclick=\"details('" + pokemon.url + "')\">Details</button></td></tr>";
                     }
                     pokemonList.innerHTML = html;
                 });
