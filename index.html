@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html>
-<body bgcolor="#E6E6FA">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
 
-<h1>PokeList</h1>
+<body class="jumbotron text-center">
 
-<table id="pokemons">
-</table>
-<br>
+<div class="col-sm-4">
+        <table id="pokemons" class="table-condensed">
+        </table>
+        <br>
+</div>
 
-<p id="name"></p>
 
-<div id="pic"></div>
 
-<p id="weight"></p>
-
-<ol id="moves">
-
-</ol>
-
-<br>
-<button onclick="previous()">Previous</button><button onclick="next()">Next</button>
+<div class="col-sm-4">
+        <h1>PokeList</h1>
+        <div class="btn-group">
+                <button class="btn btn-danger" onclick="jump(1)">Previous</button>
+                <button class="btn btn-success" onclick="jump(0)">Next</button>
+        </div>
+        <br><br><br><br>
+        <p id="name"></p>
+        <div id="pic"></div>
+        <p id="weight"></p>
+        <ul id="moves" class="list-unstyled">
+        </ul>
+</div>
 
 <script src="index.js"></script>
+
 </body>
 </html>
